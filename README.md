@@ -32,7 +32,7 @@ Visualize the learned regression line.
 Implement quadratic regression using a quadratic function.
 Repeat simple linear regression using the gradient descent algorithm.
 # Dependencies
-Python 3.x
+Python 
 
 Pandas
 
@@ -42,4 +42,4 @@ Matplotlib
 
 Seaborn
 
-Jupyter Notebook (optional for interactive exploration)
+
