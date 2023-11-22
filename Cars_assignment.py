@@ -5,7 +5,7 @@ import warnings
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Assuming your dataset is in a CSV file, change the file path accordingly
+# The path of dataset
 file_path = 'cars.csv'
 
 # Load the dataset into a Pandas DataFrame
@@ -72,8 +72,41 @@ plt.xlabel('Horsepower')
 plt.ylabel('MPG')
 plt.show()
 
+# 8) Implement the closed form solution of linear regression and use it to learn a linear model to predict the ‘mpg’ from the ‘horsepower’. Plot the learned line on the same scatter plot you got in part 7. (Hint: This is a simple linear regression problem (one feature). Do not forget to add x0=1 for the intercept. For inverting a matrix use np.linalg.inv from NumPy)
+X_linear = Dataframe[['horsepower']]
+X_linear['x0'] = 1
+y_linear = Dataframe['mpg']
+
+w_linear = np.linalg.inv(X_linear.T.dot(X_linear)).dot(X_linear.T).dot(y_linear)
+
+# Scatter plot
+#plt.figure(figsize=(8, 6))
+sns.scatterplot(x='horsepower', y='mpg', data=Dataframe)
+plt.title('8. Linear Regression: Horsepower vs Miles Per Gallon (mpg)')
+plt.xlabel('Horsepower')
+plt.ylabel('Miles Per Gallon (mpg)')
+
+# Plotting the regression line
+plt.plot(X_linear['horsepower'], X_linear.dot(w_linear), color='red', linewidth=2)
+plt.show()
 
 
+# 9) Repeat part 8 but now learn a quadratic function of the form f = w0 + w1x + w2x^2.
+X_quadratic = Dataframe[['horsepower']]
+X_quadratic['x0'] = 1
+X_quadratic['x2'] = X_quadratic['horsepower'] ** 2
+y_quadratic = Dataframe['mpg']
+
+w_quadratic = np.linalg.inv(X_quadratic.T.dot(X_quadratic)).dot(X_quadratic.T).dot(y_quadratic)
+# Scatter plot
+#plt.figure(figsize=(8, 6))
+sns.scatterplot(x='horsepower', y='mpg', data=Dataframe)
+plt.title('9. Quadratic Regression: Horsepower vs Miles Per Gallon (mpg)')
+plt.xlabel('Horsepower')
+plt.ylabel('Miles Per Gallon (mpg)')
+# Plotting the regression line
+plt.plot(X_quadratic['horsepower'], X_quadratic.dot(w_quadratic), color='red', linewidth=2)
+plt.show()
 
 
 
