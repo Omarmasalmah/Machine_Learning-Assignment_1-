@@ -65,6 +65,7 @@ plt.xlabel('MPG')
 plt.ylabel('Density')
 plt.show()
 
+
 # 7) Plot a scatter plot that shows the ‘horsepower’ on the x-axis and ‘mpg’ on the y-axis. Is there a correlation between them? Positive or negative?
 sns.scatterplot(x='horsepower', y='mpg', data=Dataframe)
 plt.title('7. Horsepower vs MPG')
