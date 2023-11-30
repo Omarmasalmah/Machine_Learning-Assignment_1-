@@ -1,6 +1,6 @@
-# Car Dataset Analysis and Linear Regression
+# Car Dataset Analysis and Linear Regression 🚗
 This project involves the analysis of a car dataset using Python and Pandas, focusing on exploring, cleaning, and modeling the data. The dataset contains information about various car features, including fuel economy (mpg), horsepower, acceleration, and more.
-# Tasks
+# Tasks 📝
   1. Dataset Overview:
 
 Load the dataset into a Pandas DataFrame.
